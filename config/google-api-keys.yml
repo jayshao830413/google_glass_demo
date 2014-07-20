@@ -1,0 +1,15 @@
+google_defaults: &google_defaults
+  scopes: [userinfo.email, userinfo.profile]
+  glass_scopes: [userinfo.email, userinfo.profile, glass.timeline]
+development:
+  client_id: 371267539229-2gdhhadtd7es1l4uuq1nmh029oer5158.apps.googleusercontent.com
+  client_secret: X2KrCpjKqOLx_OWNVig2C9Gv
+  <<: *google_defaults
+test:
+  client_id: 371267539229-2gdhhadtd7es1l4uuq1nmh029oer5158.apps.googleusercontent.com
+  client_secret: X2KrCpjKqOLx_OWNVig2C9Gv
+  <<: *google_defaults
+production:
+  client_id: 371267539229-2gdhhadtd7es1l4uuq1nmh029oer5158.apps.googleusercontent.com
+  client_secret: X2KrCpjKqOLx_OWNVig2C9Gv
+  <<: *google_defaults
