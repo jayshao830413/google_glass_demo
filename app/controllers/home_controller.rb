@@ -11,6 +11,7 @@ class HomeController < ActionController::Base
   def install_done
     user = User.new( :username => request.env["omniauth.auth"]["info"]["name"],
                      :email => request.env["omniauth.auth"]["info"]["email"] )
+
     if user.save
       binding.pry
       google_account = GoogleAccount.new()

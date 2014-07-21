@@ -5,16 +5,23 @@ class MessagesController < ActionController::Base
     content = params[:content] || ''
 
     if user = User.find_by_email(email)
-      @message = {
-        title: title,
-        content: content
-      }
+      begin
+        @message = {
+          title: title,
+          content: content
+        }
 
-      @message_timeline_object = Glass::Message.new(google_account_id: user.google_account.id)
-      @message_timeline_object.serialize(template_variables: {content: @message[:content], title: @message[:title]})
-      @message_timeline_object.insert()
+        @message_timeline_object = Glass::Message.new(google_account_id: user.google_account.id)
+        @message_timeline_object.serialize(template_variables: {content: @message[:content], title: @message[:title]})
+        @message_timeline_object.insert()
+
+        render json: {result: "success"}
+      rescue Exception => e
+        render json: {result: "Token expired, please reauth"}
+      end
+
     else
-
+      render json: {result: "user doesn't exist"}
     end
   end
 end
