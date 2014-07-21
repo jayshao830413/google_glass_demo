@@ -5,7 +5,7 @@ class HomeController < ActionController::Base
   end
 
   def install_glass_service
-    redirect_to "/auth/google_auth2"
+    redirect_to "/auth/google_oauth2"
   end
 
   def install_done
