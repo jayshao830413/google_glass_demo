@@ -13,7 +13,6 @@ class HomeController < ActionController::Base
                      :email => request.env["omniauth.auth"]["info"]["email"] )
 
     if user.save
-      binding.pry
       google_account = GoogleAccount.new()
       google_account.token = request.env["omniauth.auth"]["credentials"]["token"]
       google_account.refresh_token = request.env["omniauth.auth"]["credentials"]["token"]

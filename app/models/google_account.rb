@@ -18,7 +18,6 @@ class GoogleAccount < ActiveRecord::Base
 
   def subscribe_to_google_notifications
     subscription = Glass::Subscription.new google_account: self
-    binding.pry
     subscription.insert
   end
   def update_location(location)
