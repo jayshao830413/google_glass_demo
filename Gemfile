@@ -6,9 +6,6 @@ gem 'rails', '4.0.4'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
-
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -26,8 +23,15 @@ gem 'glass-rails'
 
 gem "omniauth-google-oauth2"
 
-gem 'pry'
-gem 'pry-debugger'
+gem 'bootstrap-sass', '~> 3.2.0'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.2'
+gem 'autoprefixer-rails'
+
+group :development do
+	gem 'pry'
+	gem 'pry-debugger'
+end	
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
