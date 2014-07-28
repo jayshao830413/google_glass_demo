@@ -28,6 +28,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '~> 4.0.2'
 gem 'autoprefixer-rails'
 
+# A simple HTTP and REST client for Ruby
+gem 'rest-client'
+
 group :development do
 	gem 'pry'
 	gem 'pry-debugger'

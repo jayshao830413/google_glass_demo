@@ -93,6 +93,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     mysql2 (0.3.16)
+    netrc (0.7.7)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -137,6 +138,9 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     retriable (1.4.1)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -192,6 +196,7 @@ DEPENDENCIES
   pry
   pry-debugger
   rails (= 4.0.4)
+  rest-client
   sass-rails (~> 4.0.2)
   sdoc
   turbolinks

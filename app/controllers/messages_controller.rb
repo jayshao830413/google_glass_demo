@@ -5,6 +5,8 @@ class MessagesController < ActionController::Base
     content = params[:content] || ''
 
     if user = User.find_by_email(email)
+      # if user'access token has expired, then refresh that token
+      user.refresh_token_if_expired
       begin
         @message = {
           title: title,

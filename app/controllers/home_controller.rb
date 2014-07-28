@@ -26,5 +26,7 @@ class HomeController < ApplicationController
       google_account.user_id = user.id
       google_account.save
     end
+
+    redirect_to root_path(:install => 'done')
   end
 end
