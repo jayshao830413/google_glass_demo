@@ -4,14 +4,14 @@ class User < ActiveRecord::Base
 
   has_one :google_account
 
-  GOOGLE_APP_KEY = "371267539229-2gdhhadtd7es1l4uuq1nmh029oer5158.apps.googleusercontent.com"
-  GOOGLE_APP_SECRET = "X2KrCpjKqOLx_OWNVig2C9Gv"
+  # GOOGLE_APP_KEY = "371267539229-2gdhhadtd7es1l4uuq1nmh029oer5158.apps.googleusercontent.com"
+  # GOOGLE_APP_SECRET = "X2KrCpjKqOLx_OWNVig2C9Gv"
 
   def refresh_token_if_expired
 	  if token_expired?
 	  	data = {
-			  :client_id => GOOGLE_APP_KEY,
-			  :client_secret => GOOGLE_APP_SECRET,
+			  :client_id => Global.hosts.google_api_keys,
+			  :client_secret => Global.hosts.google_app_secrets,
 			  :refresh_token => self.google_account.refresh_token,
 			  :grant_type => "refresh_token"
 			}
