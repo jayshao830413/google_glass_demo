@@ -20,8 +20,7 @@ class User < ActiveRecord::Base
 	    refreshhash = JSON.parse(response.body)
 	    self.google_account.token     = refreshhash['access_token']
 	    self.google_account.expires_at = DateTime.now + refreshhash["expires_in"].to_i.seconds
-
-	    self.google_account.save
+	    self.google_account.save	
 	  end
 	end
 

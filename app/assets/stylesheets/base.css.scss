@@ -11,6 +11,14 @@
 	color: #757575;
 }
 
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  line-height: 40px; /* adjust line height to align vertically*/
+  padding:0;
+  border-radius: 50%;
+}
+
 .footer {
 	.author {
 		width: 50%;

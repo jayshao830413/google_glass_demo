@@ -1,7 +1,7 @@
 class Glass::Message < Glass::TimelineItem
 
 
-  defaults_template_with  :message
+  defaults_template_with  :p77_messages
 
 
 
@@ -15,7 +15,7 @@ class Glass::Message < Glass::TimelineItem
   ####
 
 
-  has_menu_item :custom_action_name, display_name: "approved",
+  has_menu_item :custom_action_name, display_name: "do nothing",
                                      # icon_url: "http://icons.iconarchive.com/icons/enhancedlabs/lha-objects/128/Filetype-URL-icon.png",
                                      handles_with: :custom_action_handler,
                                      remove_when_selected: false

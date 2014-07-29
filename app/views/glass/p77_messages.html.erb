@@ -1,0 +1,26 @@
+<article class="author">
+	<header>
+	<style>
+		.text-large{
+			font-size: 70px;
+			margin-top: 15px;
+		}
+		.text-small{
+			margin-top:20px;
+		}
+		.title{
+			font-size: 43px;
+		}
+		.msg{
+			font-size: 23px;
+		}
+	</style>
+	<img src='<%= @image_url %>' >
+	<p class="title">APPROVAL REQUIRED</p>
+	<p class="msg">to send std <%= @type %> collections letter</p>
+	</header>
+	<section>
+		<p class="text-small align-center"><%= @client_name %>| <%= @invoice_name %></p>
+		<p class="text-large align-center"><%= @cash %> <%=  @duedate %></p>
+	</section>
+</article>
