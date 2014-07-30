@@ -5,6 +5,8 @@
 ## purposes.
 
 Rails.application.routes.default_url_options[:host] = 'localhost:3000' if Rails.env.development?
+Rails.application.routes.default_url_options[:host] = 'localhost:3000' if Rails.env.production?
+
 ::Glass.dev_callback_url = 'http://localhost:3000' if Rails.env.development?
 
 ## Your configuration details here:

@@ -1,6 +1,4 @@
 class HomeController < ApplicationController
-  GOOGLE_CLIENT_ID = "371267539229-2gdhhadtd7es1l4uuq1nmh029oer5158.apps.googleusercontent.com"
-  GOOGLE_CLIENT_SECRET = 'X2KrCpjKqOLx_OWNVig2C9Gv'
   def index
   end
 
@@ -15,6 +13,9 @@ class HomeController < ApplicationController
     user = User.new( :username => request.env["omniauth.auth"]["info"]["name"],
                      :email => request.env["omniauth.auth"]["info"]["email"] )
 
+
+    puts request.env["omniauth.auth"]["credentials"]
+
     if user.save
       google_account = GoogleAccount.new()
       google_account.token = request.env["omniauth.auth"]["credentials"]["token"]
@@ -26,7 +27,5 @@ class HomeController < ApplicationController
       google_account.user_id = user.id
       google_account.save
     end
-
-    redirect_to root_path(:install => 'done')
   end
 end
